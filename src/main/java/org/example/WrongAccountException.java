@@ -1,5 +1,5 @@
 package org.example;
 
-public class WrongAccountException extends Exception
-{
+public class WrongAccountException extends Exception {
+
 }
