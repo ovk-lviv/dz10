@@ -1,3 +1,5 @@
+package org.example;
+
 public class Account {
     private String id;
     private int balance;
@@ -35,7 +37,7 @@ public class Account {
 
     @Override
     public String toString() {
-        return "Account{" +
+        return "org.example.Account{" +
                 "id='" + id + '\'' +
                 ", balance=" + balance +
                 '}';

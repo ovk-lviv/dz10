@@ -1,12 +1,4 @@
-package lesson_15.homework;
-
-
-
-
-import lesson_15.homework.exceptions.WrongAccountException;
-import lesson_15.homework.exceptions.WrongCurrencyException;
-import lesson_15.homework.exceptions.WrongOperationException;
-
+package org.example;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;

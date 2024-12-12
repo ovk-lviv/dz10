@@ -1,8 +1,10 @@
-package lesson_15.homework;
+package org.example;
 
-public class Main
-{
-    // Поле BankApplication
+import java.util.List;
+
+public class Main {
+    private static BankApplication ba = new BankApplication();
+
 
     static public void main(String[] args) {
         /*
@@ -13,9 +15,31 @@ public class Main
             id = accountId001, amount 50, currency USD
             id = accountId001, amount 200, currency USD
          */
-        // Some changes
-
+        try {
+            processWrapper("accountId001", 100, "USD");
+        } catch (WrongAccountException a) {
+            System.out.println(a.getMessage());
+        } catch (WrongCurrencyException c) {
+            System.out.println(c.getMessage());
+        } catch (WrongOperationException o) {
+            System.out.println(o.getMessage());
+        } catch (Exception e) {
+            System.out.println("Something went wrong!");
+        } finally {
+            System.out.println("Thank you for using our service!");
+        }
     }
 
-    // Метод processWrapper(String, int, String)
-}
+    public static void processWrapper(String s, int i, String s1) throws Exception {
+        ba.process(s, i, s1);
+        if (s == null) {
+            throw new WrongAccountException();
+        }
+        if (!s1.equals("USD") && !s1.equals("HRV") && !s1.equals("EUR")) {
+            throw new WrongCurrencyException();
+        }
+        if (i < 0) {
+            throw new WrongOperationException();
+        }
+
+    }}
